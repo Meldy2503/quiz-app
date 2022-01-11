@@ -1,7 +1,8 @@
 import React from 'react';
 import "./assets/style.css";
 import index from './quizService/index';
-import Question from './components/Questions'
+import Question from './components/Questions';
+import Result from './components/Result';
 
 class App extends React.Component {
     state = {
@@ -21,10 +22,17 @@ class App extends React.Component {
       if (answer === correctAnswer) {
        this.setState({
          score: this.state.score + 1
-   })
+   });
       }
       this.setState({
         responses: this.state.responses < 5 ? this.state.responses + 1 : 5
+      });
+    };
+    playAgain = () => {
+      this.getQuestions();
+      this.setState({
+        score: 0,
+        responses: 0
       })
     }
     componentDidMount() {
@@ -45,9 +53,11 @@ class App extends React.Component {
           options={answers}
           selected={answer => this.computeAnswer(answer, correct)} 
            /> )
-
           )} 
+          {this.state.responses === 5 ? (<Result score={this.state.score} playAgain={this.playAgain} />) : null}
+
         </div>
+
       )
     }
 

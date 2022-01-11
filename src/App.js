@@ -4,6 +4,7 @@ import index from './quizService/index';
 import Question from './components/Questions';
 import Result from './components/Result';
 
+
 class App extends React.Component {
     state = {
       questionBank: [],
@@ -55,7 +56,6 @@ class App extends React.Component {
            /> )
           )} 
           {this.state.responses === 5 ? (<Result score={this.state.score} playAgain={this.playAgain} />) : null}
-
         </div>
 
       )

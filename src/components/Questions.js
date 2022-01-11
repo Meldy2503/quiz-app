@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Questions({question, options}) {
+function Questions({question, options, selected}) {
   const [answer, setAnswer] = React.useState(options)
 
   return (
@@ -11,6 +11,7 @@ function Questions({question, options}) {
         key={index} 
         className='answerBtn' 
         onClick={() => {setAnswer([text])
+          selected(text)
         }}
         >
           {text}

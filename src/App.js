@@ -5,7 +5,9 @@ import Question from './components/Questions'
 
 class App extends React.Component {
     state = {
-      questionBank: []
+      questionBank: [],
+      score: 0, 
+      responses: 0
     };
 
     getQuestions = () => {
@@ -15,6 +17,16 @@ class App extends React.Component {
         });
       });
     };
+    computeAnswer = (answer, correctAnswer) => {
+      if (answer === correctAnswer) {
+       this.setState({
+         score: this.state.score + 1
+   })
+      }
+      this.setState({
+        responses: this.state.responses < 5 ? this.state.responses + 1 : 5
+      })
+    }
     componentDidMount() {
       this.getQuestions();
     }
@@ -23,11 +35,16 @@ class App extends React.Component {
       return (
         <div className='container'>
            <div className='title'>QuizBee</div>
-           {this.state.questionBank.length > 0 && this.state.questionBank.map(({question, answers, correct, questionId}) => <Question 
+           {this.state.questionBank.length > 0 && 
+           this.state.responses < 5 &&
+           this.state.questionBank.map(
+            ({question, answers, correct, questionId}) => (
+        <Question 
            key={questionId} 
           question={question} 
-          options={answers} 
-           />
+          options={answers}
+          selected={answer => this.computeAnswer(answer, correct)} 
+           /> )
 
           )} 
         </div>

@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 function Questions({question, options}) {
@@ -11,6 +10,8 @@ function Questions({question, options}) {
         <button 
         key={index} 
         className='answerBtn' 
+        onClick={() => {setAnswer([text])
+        }}
         >
           {text}
         </button>

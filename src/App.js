@@ -1,7 +1,7 @@
 import React from 'react';
 import "./assets/style.css";
 import index from './quizService/index';
-
+import Question from './components/Questions'
 
 class App extends React.Component {
     state = {
@@ -23,8 +23,13 @@ class App extends React.Component {
       return (
         <div className='container'>
            <div className='title'>QuizBee</div>
-           {this.state.questionBank.length > 0 && this.state.questionBank.map(({question, answers, correct, questionId}) => (<h2>{question}</h2>
-          ))} 
+           {this.state.questionBank.length > 0 && this.state.questionBank.map(({question, answers, correct, questionId}) => <Question 
+           key={questionId} 
+          question={question} 
+          options={answers} 
+           />
+
+          )} 
         </div>
       )
     }

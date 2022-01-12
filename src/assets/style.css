@@ -32,7 +32,6 @@ body {
   position: relative;
   background-color: #000000e1;
   color: #fff;
-  text-shadow: 1px 2px 3px #1196b8;
   padding: .5em;
   font-size: 2rem;
   border-radius: .3em;
@@ -42,7 +41,7 @@ body {
 .question {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: .4em;
+  margin-bottom: .6em;
   color: #eee;
 }
 
@@ -54,42 +53,51 @@ body {
   box-sizing: border-box;
   background-color: #000000e1;
   border-radius: .3em;
+  box-shadow: 2px 3px 4px #333;
 }
 
 .answerBtn {
   position: relative;
   padding: .6em;
-  background-color: #008b8b;
+  background-color: #058d8d;
   display: inline-block;
   margin: .5em;
   outline: none;
   border: none;
   font-size: 1em;
-  color: #ffffff;
+  color: #fff;
   font-weight: bold;
   border-radius: .3em;
   cursor: pointer;
 }
 
 .score-board {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 700px;
+  
 }
 
 .score {
-  position: absolute;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 1024px;
-  font-size: 3em;
-  top: 250px;
+  font-size: 3.2em;
+  font-weight: 700;
+  top: 280px;
   text-align: center;
 }
 
 .playBtn {
   position: absolute;
-  font-size: 1.4em;
-  padding: 1rem;
+  font-size: 1.5rem;
+  padding: .6em;
   top: 350px;
-  background-color: #2eb62e;
+  background-color: #008b8b;
   color: #ffffff;
   width: 150px;
   left: 0px;
@@ -98,7 +106,9 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 3px;
+
 }
 .playBtn:hover {
-  background-color: #008b8b;
+  background-color: #1fb6b6;
+  color: #000;
 }

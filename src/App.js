@@ -47,7 +47,7 @@ class App extends React.Component {
       this.getQuestions();
       this.setState({
         score: 0,
-        responses: 0
+        responses: 0,
       })
     }
   

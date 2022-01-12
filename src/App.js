@@ -4,13 +4,20 @@ import index from './quizService/index';
 import Question from './components/Questions';
 import Result from './components/Result';
 
-
 class App extends React.Component {
-    state = {
+    state = {                           
       questionBank: [],
       score: 0, 
       responses: 0
     };
+
+  //  function  App(props) {
+  //    const [state, setState] = React.useState({
+  //     questionBank: [],
+  //     score: 0, 
+  //     responses: 0
+  //    });
+    
 
     getQuestions = () => {
       index().then (question => {
@@ -19,28 +26,39 @@ class App extends React.Component {
         });
       });
     };
-    computeAnswer = (answer, correctAnswer) => {
+    
+    //  getQuestions = () => {
+    //   setState ({
+    //       questionBank: props.question
+    //     });
+    
+
+     computeAnswer = (answer, correctAnswer) => {
       if (answer === correctAnswer) {
        this.setState({
          score: this.state.score + 1
-   });
+         });
       }
       this.setState({
         responses: this.state.responses < 5 ? this.state.responses + 1 : 5
       });
     };
-    playAgain = () => {
+     playAgain = () => {
       this.getQuestions();
       this.setState({
         score: 0,
         responses: 0
       })
     }
-    componentDidMount() {
-      this.getQuestions();
-    }
+  
+       componentDidMount() {
+       this.getQuestions();
+        }
+    // React.useEffect(() => {
+    //   getQuestions();
+    // }, [])
 
-    render () {
+     render () {
       return (
         <div className='container'>
            <div className='title'>QuizBee</div>
@@ -55,13 +73,13 @@ class App extends React.Component {
           selected={answer => this.computeAnswer(answer, correct)} 
            /> )
           )} 
-          {this.state.responses === 5 ? (<Result score={this.state.score} playAgain={this.playAgain} />) : null}
+          {this.state.responses === 5 ? 
+          (<Result score={this.state.score} 
+          playAgain={this.playAgain} />) : null}
         </div>
 
       )
     }
-
-
 }
 
 // function App() {

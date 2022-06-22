@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("../assets/img2.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 120rem;
+  width: 60%;
+  background-color: #eee;
+  margin: 3rem auto;
+  padding: 1rem;
+  margin-bottom: 4rem;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
+
+.title {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 0.4rem;
+  font-size: 2.3rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+@media screen and (max-width: 900px) {
+  .question {
+    font-size: 1.1rem;
+  }
+}
+
+.questionBox {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+  border-radius: 0.3rem;
+  box-shadow: 0 0.1rem 0.3rem #333;
+}
+
+.answerBtn {
+  padding: 0.4rem 0.8rem;
+  background-color: #147d92;
+  display: inline-block;
+  margin: 0.5rem 0.7rem 0.5rem 0;
+  outline: none;
+  border: none;
+  font-size: 1.05rem;
+  color: #eee;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+@media screen and (max-width: 900px) {
+  .answerBtn {
+    font-size: 0.95rem;
+  }
+}
+
+.answerBtn:hover {
+  background-color: #19a0bb;
+}
+
+.score-board {
+  margin: 5rem auto 8rem auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+@media screen and (max-width: 900px) {
+  .score {
+    font-size: 2.5rem;
+  }
+}
+
+.playBtn {
+  font-size: 1.2rem;
+  padding: 0.9rem 2rem;
+  background-color: #147d92;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.3rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  transition: all 0.8s;
+}
+
+.playBtn:hover,
+.playBtn:focus {
+  box-shadow: 15rem 0 0 0 #19a0bb inset;
+}
